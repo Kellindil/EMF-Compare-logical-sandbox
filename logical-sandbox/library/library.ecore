@@ -8,7 +8,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="writers" upperBound="-1"
         eType="#//Writer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="clients" upperBound="-1"
-        eType="ecore:EClass #//Person" containment="true"/>
+        eType="#//Person" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Book" eSuperTypes="#//Borrowable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType library_types.ecore#//String"/>
@@ -34,12 +34,12 @@
         eType="ecore:EDataType library_types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="birthDate" eType="ecore:EDataType library_types.ecore#//Date"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="borrowed" upperBound="-1"
-        eType="ecore:EClass #//Borrowable"/>
+        eType="#//Borrowable" eOpposite="#//Borrowable/borrowers"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Borrowable" abstract="true" interface="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="copies" eType="ecore:EDataType library_types.ecore#//int"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="borrowers" upperBound="-1"
-        eType="ecore:EClass library.ecore#//Person"/>
+        eType="#//Person" eOpposite="#//Person/borrowed"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Category">
     <eLiterals name="Mystery"/>
