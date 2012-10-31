@@ -3,19 +3,17 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="library">
   <eClassifiers xsi:type="ecore:EClass" name="Library">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType library_types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="books" upperBound="-1"
-        eType="#//Book" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stock" upperBound="-1"
+        eType="#//Item" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="writers" upperBound="-1"
         eType="#//Writer" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Book">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType library_types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
-        eType="ecore:EDataType library_types.ecore#//int"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Book" eSuperTypes="#//Item">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//Category"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authors" upperBound="-1"
         eType="#//Writer" eOpposite="#//Writer/books"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Magazine" eSuperTypes="#//Item"/>
   <eClassifiers xsi:type="ecore:EClass" name="Writer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" lowerBound="1"
         eType="ecore:EDataType library_types.ecore#//String"/>
@@ -24,6 +22,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="books" upperBound="-1"
         eType="#//Book" eOpposite="#//Book/authors"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType library_types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Item" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType library_types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType library_types.ecore#//int"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Category">
     <eLiterals name="Mystery"/>
