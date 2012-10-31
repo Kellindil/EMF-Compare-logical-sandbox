@@ -9,7 +9,8 @@
         eType="#//Writer" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Book">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType library_types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType library_types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pages" lowerBound="1" eType="ecore:EDataType library_types.ecore#//int"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//Category"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authors" upperBound="-1"
         eType="#//Writer" eOpposite="#//Writer/books"/>
