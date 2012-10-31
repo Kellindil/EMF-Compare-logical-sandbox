@@ -10,7 +10,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Book">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType library_types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType library_types.ecore#//int"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="#//Category"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="authors" upperBound="-1"
         eType="#//Writer" eOpposite="#//Writer/books"/>
@@ -20,7 +19,6 @@
         eType="ecore:EDataType library_types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" lowerBound="1"
         eType="ecore:EDataType library_types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" eType="ecore:EDataType library_types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="books" upperBound="-1"
         eType="#//Book" eOpposite="#//Book/authors"/>
   </eClassifiers>
@@ -28,6 +26,5 @@
     <eLiterals name="Mystery"/>
     <eLiterals name="ScienceFiction" value="1"/>
     <eLiterals name="Biography" value="2"/>
-    <eLiterals name="History" value="3"/>
   </eClassifiers>
 </ecore:EPackage>
